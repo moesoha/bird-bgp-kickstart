@@ -10,6 +10,6 @@
 
 以及建议学习的话选择开几台虚拟机，或者在 [DN42](https://dn42.net/)（一个世界性的很大的实验性互联网）上进行试验。只有在不满足于在本地或 DN42 实验的情况下，想要真真正正的自己当 ISP，才申请、租用互联网上的 ASN 和 IP 地址资源。
 
-本文写成较快，虽然也有多人试读、审校，难免会有遗漏，如有问题、意见或者建议，请在 [issue](https://github.com/moesoha/bird-bgp-kickstart/issues) 中提出。
+本文写成较快，虽然也有多人试读、审校，难免会有遗漏，相关英文术语的翻译也会有不合适的地方，如有问题、意见或者建议，请在 [issue](https://github.com/moesoha/bird-bgp-kickstart/issues) 中提出。
 
 本文以 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 License](https://creativecommons.org/licenses/by-nc-sa/4.0/) 进行授权。

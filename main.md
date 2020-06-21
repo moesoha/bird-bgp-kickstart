@@ -1,6 +1,6 @@
 # BIRD 与 BGP 的新手开场
 
-*版本：1.0 (20200621-1)*
+*版本：1.0-20200621.2*
 
 本文以 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 License](https://creativecommons.org/licenses/by-nc-sa/4.0/) 进行授权。
 
@@ -627,7 +627,7 @@ protocol bgp ibgp_b from tpl_ibgp {
 
 特别感谢 foobar 院的 twd2 对本文的审读与修改，感谢 foobar 院的 Martian、快乐 BGP 群的 alanyhq 试读本文并提供意见。
 
-本文写成较快，虽然也有多人试读、审校，难免会有遗漏，如有问题、意见或者建议，或者对文章中内容有任何不理解的，请在 [issue](https://github.com/moesoha/bird-bgp-kickstart/issues) 中提出。
+本文写成较快，虽然也有多人试读、审校，难免会有遗漏，相关英文术语的翻译也会有不合适的地方，如有问题、意见或者建议，请在 [issue](https://github.com/moesoha/bird-bgp-kickstart/issues) 中提出。
 
 *（如果有需要申请 ASN 资源的请联系我的邮箱 `soha@lohu.info`。）*
 
