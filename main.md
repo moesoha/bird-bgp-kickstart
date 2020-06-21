@@ -627,7 +627,7 @@ protocol bgp ibgp_b from tpl_ibgp {
 
 特别感谢 foobar 院的 twd2 对本文的审读与修改，感谢 foobar 院的 Martian、快乐 BGP 群的 alanyhq 试读本文并提供意见。
 
-本文写成较快，虽然也有多人试读、审校，难免会有遗漏，如有问题、意见或者建议，或者对文章中内容有任何不理解的，请在 issue 中提出。
+本文写成较快，虽然也有多人试读、审校，难免会有遗漏，如有问题、意见或者建议，或者对文章中内容有任何不理解的，请在 [issue](https://github.com/moesoha/bird-bgp-kickstart/issues) 中提出。
 
 *（如果有需要申请 ASN 资源的请联系我的邮箱 `soha@lohu.info`。）*
 
@@ -693,6 +693,8 @@ function net_len_too_long(){
 ```
 
 ### Bogon Prefixes and ASNs
+
+有一些特殊用途的、私有的、被保留的 IP 地址块或者 ASN 是不适宜出现在公网的，所以这里列出了所有“bogon”的 IP 前缀和 ASN，供大家写过滤器的时候使用。
 
 ```
 define BOGON_ASNS = [
