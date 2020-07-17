@@ -1,6 +1,6 @@
 # BIRD 与 BGP 的新手开场
 
-*版本：1.0-20200627.1*
+*版本：1.0-20200717.1*
 
 本文以 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 License](https://creativecommons.org/licenses/by-nc-sa/4.0/) 进行授权。
 
@@ -388,13 +388,14 @@ template bgp tpl_ibgp {
     med metric;
     direct; # 如果 iBGP 是直接连接的（比如使用 GRE 隧道直接连接）就需要写这个，否则需要针对 session 指定 multihop
     ipv4 {
+        # 对于初学者来说，路由器间两两打隧道、将 multihop 关掉并将 next hop 改为当前路由器的操作会使 iBGP 更方便，也更好理解
         next hop self;
         gateway direct;
         import all;
         export all;
     };
     ipv6 {
-        next hop self;
+        next hop self; # 同上
         gateway direct;
         import all;
         export all;
@@ -762,6 +763,8 @@ function is_bogon_asn() {
 ```
 
 ### 与 Vultr 的 BGP session
+
+与 Vultr 建立 BGP 会话较为麻烦，因为我们到 Vultr 的 BGP 路由器不是直接连接的，需要配置 multihop，以及告诉 BIRD 如何到达那个路由器，否则会找不到 next hop 在哪里。Vultr 内部也使用着大量的私有 ASN，我们也有必要将私有 ASN 给处理掉，不然会在一些时候出问题。
 
 ```
 protocol bgp bgp_vultr_6 from tpl_bgp {
