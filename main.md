@@ -1,6 +1,6 @@
 # BIRD 与 BGP 的新手开场
 
-*版本：1.0-20200717.1*
+*版本：1.0-20200808.1*
 
 本文以 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 License](https://creativecommons.org/licenses/by-nc-sa/4.0/) 进行授权。
 
@@ -264,8 +264,9 @@ protocol some_proto {
     ipv6 {
         export filter some_filter1;
         import filter some_filter2;
-        export limit 100 disable; # 导出的路由数量多于 100 后自动停止该协议，避免传出过多路由（往往这个时候是漏路由了）
-        import limit 100 restart; # 导入的路由数量多于 100 后自动重启该协议，限制对端传入的路由数
+        # 下面这两个是可选项，默认是不做限制的
+        export limit 100 action disable; # 导出的路由数量多于 100 后自动停止该协议，避免传出过多路由（往往这个时候是漏路由了）
+        import limit 100 action restart; # 导入的路由数量多于 100 后自动重启该协议，限制对端传入的路由数
     };
 }
 ```
