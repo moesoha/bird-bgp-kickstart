@@ -1,6 +1,6 @@
 # BIRD 与 BGP 的新手开场
 
-*版本：1.0-20200808.1*
+*版本：1.0-20210221.1*
 
 本文以 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 License](https://creativecommons.org/licenses/by-nc-sa/4.0/) 进行授权。
 
@@ -726,7 +726,7 @@ define BOGON_PREFIXES_V4 = [
     169.254.0.0/16+,        # RFC 3927 link local
     172.16.0.0/12+,         # RFC 1918 private space 
     192.0.2.0/24+,          # RFC 5737 TEST-NET-1
-    192.88.99.0/24+,        # RFC 7526 6to4 anycast relay
+    192.88.99.0/24{25,32},  # RFC 7526 6to4 anycast relay, no more specific
     192.168.0.0/16+,        # RFC 1918 private space
     198.18.0.0/15+,         # RFC 2544 benchmarking
     198.51.100.0/24+,       # RFC 5737 TEST-NET-2
