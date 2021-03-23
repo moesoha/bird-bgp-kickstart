@@ -430,7 +430,7 @@ router id 198.51.100.1;
 protocol device {}
 
 
-# kernel 协议用于到处路由表到内核，这里列出了常见的配置，详细的请看官方文档
+# kernel 协议用于导出路由表到内核，这里列出了常见的配置，详细的请看官方文档
 # https://bird.network.cz/?get_doc&v=20&f=bird.html#ss6.6
 # IPv4 的 kernel 协议，用于导出 IPv4 路由表到内核用于数据转发
 protocol kernel {
