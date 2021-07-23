@@ -345,7 +345,7 @@ protocol bgp {
     password "Aa1";
     # 如果和对端约定了密码，在这里配置约定好的密码，否则不用写
 
-    graceful restart on;
+    graceful restart;
     # 配置 BGP 的 graceful restart
     # 如果对端因为网络抖动或暂时崩溃而暂时下线，会导致所有传入路由瞬间消失
     # 为了避免这种情况下数据转发中断，才有 graceful restart
@@ -384,7 +384,7 @@ BGP 协议中的过滤器可以使用这些属性：
 
 ```
 template bgp tpl_ibgp {
-    graceful restart on;
+    graceful restart;
     local as 65550;
     med metric;
     direct; # 如果 iBGP 是直接连接的（比如使用 GRE 隧道直接连接）就需要写这个，否则需要针对 session 指定 multihop
@@ -573,7 +573,7 @@ protocol static {
 
 # 使用模板减少重复代码
 template bgp tpl_bgp {
-    graceful restart on;
+    graceful restart;
     local as LOCAL_ASN;
     ipv6 {
         import where !net_len_too_long();
@@ -798,7 +798,7 @@ function preprocess_vultr_bgp_path() {
 
 ```
 protocol bgp bgp_he {
-    graceful restart on;
+    graceful restart;
     local as 64512; # 请修改
     source address 2001:470:aa:aa::2; # 请修改
     neighbor 2001:470:aa:aa::1 as 6939; # 请修改
