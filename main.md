@@ -1,6 +1,6 @@
 # BIRD 与 BGP 的新手开场
 
-*版本：1.0-20210323*
+*版本：1.0-20210910*
 
 本文以 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 License](https://creativecommons.org/licenses/by-nc-sa/4.0/) 进行授权。
 
@@ -635,11 +635,11 @@ protocol bgp ibgp_b from tpl_ibgp {
 
 希望大家能在阅读之后，对如何使用 BIRD 配置 BGP 有了点概念，并能做出正确的配置。当然更希望大家能不止步于此，多学习计算机网络相关的基础知识，或阅读 BIRD 官方文档学到更全面的配置。
 
-特别感谢 foobar 院的 twd2 对本文的审读与修改，感谢 foobar 院的 Martian、快乐 BGP 群的 alanyhq 试读本文并提供意见，感谢快乐 BGP 群的 ZX 和 GitHub 上的 @Anillc ([#1](https://github.com/moesoha/bird-bgp-kickstart/pull/1)) 对本文内容的完善与修正。
+特别感谢 foobar 院的 twd2 对本文的审读与修改，感谢 foobar 院的 Martian、快乐 BGP 群的 alanyhq 试读本文并提供意见，感谢 ZX、Anillc ([#1](https://github.com/moesoha/bird-bgp-kickstart/pull/1))、小黄蜂对本文内容的完善与修正。
 
 本文写成较快，虽然也有多人试读、审校，难免会有遗漏，相关英文术语的翻译也会有不合适的地方，如有问题、意见或者建议，请在 [issue](https://github.com/moesoha/bird-bgp-kickstart/issues) 中提出。
 
-*（如果有需要申请 ASN 资源的请联系我的邮箱 `soha@lohu.info`。）*
+*（如果有需要申请 ASN 资源的请联系我的邮箱 `orz.soha@gmail.com`。）*
 
 ----------
 
@@ -735,14 +735,16 @@ define BOGON_PREFIXES_V4 = [
     240.0.0.0/4+            # reserved
 ];
 define BOGON_PREFIXES_V6 = [
-    ::/8+,                  # RFC 4291 IPv4-compatible, loopback, et al 
+    ::/8+,                  # RFC 4291 IPv4-compatible, loopback, et al
+    0064:ff9b::/96+,        # RFC 6052 IPv4/IPv6 Translation
+    0064:ff9b:1::/48+,      # RFC 8215 Local-Use IPv4/IPv6 Translation
     0100::/64+,             # RFC 6666 Discard-Only
     2001::/32{33,128},      # RFC 4380 Teredo, no more specific
     2001:2::/48+,           # RFC 5180 BMWG
     2001:10::/28+,          # RFC 4843 ORCHID
     2001:db8::/32+,         # RFC 3849 documentation
     2002::/16+,             # RFC 7526 deprecated 6to4 relay anycast. If you wish to allow this, change `16+` to `16{17,128}`(no more specific)
-    3ffe::/16+,             # RFC 3701 old 6bone
+    3ffe::/16+, 5f00::/8+,  # RFC 3701 old 6bone
     fc00::/7+,              # RFC 4193 unique local unicast
     fe80::/10+,             # RFC 4291 link local unicast
     fec0::/10+,             # RFC 3879 old site local unicast
