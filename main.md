@@ -568,7 +568,7 @@ protocol static {
 # 目标 8
 protocol static {
     ipv6;
-    route 2001:db8:100a::/48 via "tun-b";
+    route 2001:db8:100a::/48 via "tun-a";
 }
 
 # 使用模板减少重复代码
@@ -610,7 +610,7 @@ protocol bgp bgp_as64501 from tpl_bgp {
 }
 
 # 目标 6
-protocol bgp bgp_as64501 from tpl_bgp {
+protocol bgp bgp_as64502 from tpl_bgp {
     source address 2001:db8:ffff:2::6:5550;
     neighbor 2001:db8:ffff:2::6:4502 as 64502;
     ipv6 {
