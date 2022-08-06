@@ -1,6 +1,6 @@
 # BIRD 与 BGP 的新手开场
 
-*版本：1.0-20210910*
+*版本：1.0-20220806*
 
 本文以 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 License](https://creativecommons.org/licenses/by-nc-sa/4.0/) 进行授权。
 
@@ -635,7 +635,7 @@ protocol bgp ibgp_b from tpl_ibgp {
 
 希望大家能在阅读之后，对如何使用 BIRD 配置 BGP 有了点概念，并能做出正确的配置。当然更希望大家能不止步于此，多学习计算机网络相关的基础知识，或阅读 BIRD 官方文档学到更全面的配置。
 
-特别感谢 foobar 院的 twd2 对本文的审读与修改，感谢 foobar 院的 Martian、快乐 BGP 群的 alanyhq 试读本文并提供意见，感谢 ZX、Anillc ([#1](https://github.com/moesoha/bird-bgp-kickstart/pull/1))、小黄蜂对本文内容的完善与修正。
+特别感谢 foobar 院的 twd2 对本文的审读与修改，感谢 foobar 院的 Martian、快乐 BGP 群的 alanyhq 试读本文并提供意见，感谢 ZX、Anillc ([#1](https://github.com/moesoha/bird-bgp-kickstart/pull/1))、小黄蜂、pansz ([#2](https://github.com/moesoha/bird-bgp-kickstart/pull/2))对本文内容的完善与修正。
 
 本文写成较快，虽然也有多人试读、审校，难免会有遗漏，相关英文术语的翻译也会有不合适的地方，如有问题、意见或者建议，请在 [issue](https://github.com/moesoha/bird-bgp-kickstart/issues) 中提出。
 
